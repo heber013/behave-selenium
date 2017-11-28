@@ -6,10 +6,11 @@ This is an example of selenium test using behave framework
 Pre-requisites
 ==============
 Install in the system:
-- Python3
-- pip3
-- virtualenv
-- chromedriver binary in a location that is in $PATH
+Python3
+pip3
+virtualenv
+chromedriver binary in a location that is in $PATH
+(see https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
 To run the tests checkout the branch and follow the below steps
 ===============================================================
@@ -27,3 +28,8 @@ $ ./run_tests.bat
 It will run all tests by default. You can specify behave filters, for example:
 $ ./run_tests.bat -t Example1
 It will run the scenarios with tag @Example1
+
+*******************************************************************************
+In this example has been used Page Object pattern.
+This reduces the amount of duplicated code and means that if the UI changes,
+the fix need only be applied in one place.
