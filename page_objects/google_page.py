@@ -25,7 +25,7 @@ class GooglePage(BasePage):
                 print(url)
                 if url == link:
                     _link.find_element(By.TAG_NAME, 'a').click()
-                return pages[link](self.driver)
+                    return pages[link](self.driver)
         raise Exception('Link %s not found' % link)
 
     def click_on_link_by_link_text(self, link):

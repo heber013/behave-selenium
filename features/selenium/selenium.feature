@@ -2,7 +2,7 @@
 Feature: Verify I can navigate to selenium page
 
 @Example1
-Scenario: Go to selenium page and verify it is open in the browser
+Scenario: Go to selenium page using exact link and verify it is open in the browser
   When I go to "http://www.google.com"
   And I type "Seleniumhq" in the searchbox
   And I press "ENTER" in the searchbox
@@ -11,7 +11,7 @@ Scenario: Go to selenium page and verify it is open in the browser
 
 
 @Example2
-Scenario: Go to selenium page and verify it is open in the browser
+Scenario: Go to selenium page using link text and verify it is open in the browser
   When I go to "http://www.google.com"
   And I type "Seleniumhq" in the searchbox
   And I press "ENTER" in the searchbox
