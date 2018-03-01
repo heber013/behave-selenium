@@ -7,5 +7,5 @@ Contains the mapping between urls and the corresponding page class.
 
 pages = {
     'http://www.google.com': GooglePage,
-    'http://www.seleniumhq.org/': SeleniumPage
+    'https://www.seleniumhq.org/': SeleniumPage
 }

@@ -6,7 +6,7 @@ Scenario: Go to selenium page using exact link and verify it is open in the brow
   When I go to "http://www.google.com"
   And I type "Seleniumhq" in the searchbox
   And I press "ENTER" in the searchbox
-  And I click on "www.seleniumhq.org/" link
+  And I click on "https://www.seleniumhq.org/" link
   Then I am on "seleniumhq" Page
 
 

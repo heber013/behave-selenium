@@ -2,7 +2,9 @@ from selenium import webdriver
 
 
 def before_all(context):
-    context.browser = webdriver.Chrome()
+    capabilities = webdriver.DesiredCapabilities.CHROME
+    context.browser = webdriver.Remote('http://localhost:4444/wd/hub',
+                                       desired_capabilities=capabilities)
 
 
 def after_all(context):
