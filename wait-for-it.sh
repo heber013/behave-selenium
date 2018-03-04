@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+#   Use this script to test if a given TCP host/port are available
+
+#   https://docs.docker.com/compose/startup-order/
+#   https://github.com/vishnubob/wait-for-it/
 
 cmdname=$(basename $0)
 
