@@ -1,4 +1,6 @@
 **/*.pyc
 .idea/
 ve/
-
+docker_outputs/
+outputs/
+geckodriver.log
