@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 RUN chmod +x wait-for-it.sh
 
-ENTRYPOINT ["/bin/bash", "./wait-for-it.sh"]
+ENTRYPOINT ["python", "run_tests.py"]

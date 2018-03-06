@@ -27,13 +27,15 @@ services:
       behavetestsnw: {}
   ui_tests:
     build: .
-    command: -t 15 chromenode:5555 -- behave
+    command: -b chrome -g http://selenium_hub:4444/wd/hub --junit
     depends_on:
       - selenium_hub
       - chromenode
       - firefoxnode
     networks:
       behavetestsnw: {}
+    volumes:
+      - ./docker_outputs:/ui-integration-tests/outputs
 
 networks:
   behavetestsnw:
