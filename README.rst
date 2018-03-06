@@ -11,7 +11,7 @@ Running tests using docker-compose
 ::
 
   $ git clone https://github.com/heber013/behave-selenium
-  $ behave-selenium
+  $ cd behave-selenium
   $ sudo docker-compose up --build
 
 It will create the selenium grid run all the tests in a docker container.
