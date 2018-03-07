@@ -1,19 +1,10 @@
 pipeline {
     agent any
-    environment {
-    TAG = "demo_${env.BRANCH_NAME}_${env.BUILD_NUMBER}"
-    }
     stages {
-        stage('build') {
-            steps {
-                sh 'docker-compose build ui_tests:${TAG}'
-            }
-        }
         stage('run tests') {
             steps {
-                sh 'docker-compose run ui_tests:${TAG}'
+                sh 'docker-compose up --build -d'
             }
-        }
         stage('clean containers') {
             steps {
                 sh 'docker-compose down'
