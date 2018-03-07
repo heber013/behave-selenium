@@ -1,13 +1,13 @@
 import argparse
 import logging.config
-import shutil
-from os import environ
 import os
-import traceback
-from behave import __main__ as behave_script
+import subprocess
 import sys
-from configobj import ConfigObj
+import traceback
+from os import environ
 
+from behave import __main__ as behave_script
+from configobj import ConfigObj
 
 ARGS = None
 CONFIG = ConfigObj(os.path.join(os.getcwd(), "config", "config.cfg"))
@@ -38,6 +38,14 @@ def __parse_arguments():
     parser.add_argument('-g',
                         '--grid',
                         help='The remote grid url in which the tests will be executed',
+                        required=False)
+    parser.add_argument('-w',
+                        '--wait_for',
+                        help='wait for a HOST:PORT to be available before executing tests.',
+                        required=False)
+    parser.add_argument('--time',
+                        help='Time to wait in case wait_for is specified',
+                        default=15,
                         required=False)
     parser.add_argument('-o',
                         '--output_folder',
@@ -116,6 +124,8 @@ def __set_variables_to_behave():
 
 def __run_test_cases():
     try:
+        if ARGS.wait_for:
+            subprocess.check_call(['./wait-for-it.sh', '-t', str(ARGS.time), ARGS.wait_for])
         behave_script.main()
     except Exception as e:
         logging.error("Error: " + str(e))

@@ -27,7 +27,7 @@ services:
       behavetestsnw: {}
   ui_tests:
     build: .
-    command: -b chrome -g http://selenium_hub:4444/wd/hub --junit
+    command: -b chrome -g http://selenium_hub:4444/wd/hub --junit --wait_for chromenode:5555
     depends_on:
       - selenium_hub
       - chromenode
