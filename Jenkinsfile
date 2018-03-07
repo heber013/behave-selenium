@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker-compose build ui_tests:{TAG}'
+                sh 'docker-compose build ui_tests:${TAG}'
             }
         }
         stage('run tests') {
             steps {
-                sh 'docker-compose run ui_tests:{TAG}'
+                sh 'docker-compose run ui_tests:${TAG}'
             }
         }
         stage('clean containers') {
