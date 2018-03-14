@@ -126,7 +126,7 @@ def __run_test_cases():
     try:
         if ARGS.wait_for:
             subprocess.check_call(['./wait-for-it.sh', '-t', str(ARGS.time), ARGS.wait_for])
-        behave_script.main()
+        sys.exit(behave_script.main())
     except Exception as e:
         logging.error("Error: " + str(e))
         traceback.print_exc()
